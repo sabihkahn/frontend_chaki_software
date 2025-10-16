@@ -9,10 +9,10 @@ const api = {
   // Order APIs
   createOrder: (orderData) => axios.post(`${BASE_URL}/api/order`, orderData),
   getPendingOrders: () => axios.get(`${BASE_URL}/api/orders/pending`),
-  getCompletedOrders: () => axios.get(`${BASE_URL}/api/orders/completed`),
+  getCompletedOrders: () => axios.get(`${BASE_URL}/odercompleted`),
   confirmOrder: (id) => axios.put(`${BASE_URL}/api/order/confirm/${id}`),
   updateFinalWeight: (id, finalWeight) => 
-    axios.put(`${BASE_URL}/api/order/final-weight/${id}`, { finalWeight }),
+    axios.put(`${BASE_URL}/apifinal/${id}`, { finalWeight }),
   
   // Inventory APIs
   getInventory: () => axios.get(`${BASE_URL}/api/inventory`),
@@ -196,7 +196,7 @@ const OrderList = ({ type = 'pending', refreshTrigger, onRefresh }) => {
       setOrders(response.data);
     } catch (error) {
       console.error('Error loading orders:', error);
-      alert('❌ Error loading orders');
+      console.log('❌ Error loading orders');
     } finally {
       setLoading(false);
     }
@@ -211,7 +211,7 @@ const OrderList = ({ type = 'pending', refreshTrigger, onRefresh }) => {
       alert('✅ Order confirmed successfully!');
     } catch (error) {
       console.error('Error confirming order:', error);
-      alert('❌ Error confirming order');
+      console.log('❌ Error confirming order');
     } finally {
       setUpdating(null);
     }
