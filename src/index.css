@@ -1,0 +1,34 @@
+.maindah{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    
+}
+@media screen and (max-width: 768px) {
+    .maindah{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+  div[style*="flex-wrap"] > div {
+    width: 75% !important; /* 2 per row on mobile */
+  }
+}
+
+.textfix {
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+}
+.names {
+    font-size: 22px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(33, 33, 33);
+    text-transform: uppercase;
+}
